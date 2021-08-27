@@ -4,40 +4,22 @@ import styles from './index.less';
 import { Button, Drawer } from 'antd';
 import { useCallback } from 'react';
 import { useState } from 'react';
-import { Graph } from '@antv/x6';
-
-const data = {
-  nodes: [
-    {
-      id: 'node1',
-      shape: 'rect', // 使用 rect 渲染
-      x: 100,
-      y: 200,
-      width: 80,
-      height: 40,
-      label: 'hello',
-    },
-    {
-      id: 'node2',
-      shape: 'ellipse', // 使用 ellipse 渲染
-      x: 300,
-      y: 200,
-      width: 80,
-      height: 40,
-      label: 'world',
-    },
-  ],
-  edges: [
-    {
-      source: 'node1',
-      target: 'node2',
-    },
-  ],
-};
+import type { Graph } from '@antv/x6';
+import type { Addon } from '@antv/x6';
+import { createDnd, createGraph } from '@/graph';
+import Sider from '@/components/sider';
+import StartEventNode from '@/graph/nodes/start-event';
+import EndEventNode from '@/graph/nodes/end-event';
+import { getDataType, getNodeSize } from '@/graph/nodes/utils';
+import { NodeDataType } from '@/graph/nodes/enums';
+import '@antv/x6-react-shape';
+import ConditionTaskNode from '@/graph/nodes/condition-task';
+import CouponTaskNode from '@/graph/nodes/coupon-task';
 
 export default function IndexPage() {
   const ref = useRef<HTMLDivElement>(null);
   const graphRef = useRef<Graph>();
+  const dndRef = useRef<Addon.Dnd>();
   const [visible, setVisible] = useState<boolean>(false);
 
   const showDrawer = () => {
@@ -49,27 +31,57 @@ export default function IndexPage() {
 
   const exportXml = useCallback(async () => {}, []);
 
-  useEffect(() => {
-    if (!ref.current || graphRef.current) {
+  const startDrag = useCallback(
+    (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+      if (!graphRef.current) {
+        return;
+      }
+      const type = getDataType(e.currentTarget);
+      const size = getNodeSize(type);
+      let node;
+      if (type === NodeDataType.StartEvent) {
+        node = graphRef.current.createNode({
+          ...size,
+          shape: 'react-shape',
+          component: <StartEventNode />,
+        });
+      } else if (type === NodeDataType.EndEvent) {
+        node = graphRef.current.createNode({
+          ...size,
+          shape: 'react-shape',
+          component: <EndEventNode />,
+        });
+      } else if (type === NodeDataType.ConditionTask) {
+        node = graphRef.current.createNode({
+          ...size,
+          shape: 'react-shape',
+          component: <ConditionTaskNode />,
+        });
+      } else if (type === NodeDataType.CouponTask) {
+        node = graphRef.current.createNode({
+          ...size,
+          shape: 'react-shape',
+          component: <CouponTaskNode />,
+        });
+      }
+
+      if (node) {
+        dndRef.current?.start(node, e.nativeEvent as any);
+      }
+    },
+    [],
+  );
+
+  const initGraph = () => {
+    if (!ref.current || (graphRef.current && dndRef.current)) {
       return;
     }
-    const graph = new Graph({
-      container: ref.current,
-      background: {
-        color: '#fff', // 设置画布背景颜色
-      },
-      grid: {
-        size: 10,      // 网格大小 10px
-        visible: true, // 渲染网格背景
-      },
-      selecting: {
-        enabled: true,
-        showNodeSelectionBox: true,
-      }, // 点选、框选
-      snapline: true, // 对齐线
-    });
-    graph.fromJSON(data);
-    graphRef.current = graph;
+    graphRef.current = createGraph(ref.current);
+    dndRef.current = createDnd(graphRef.current);
+  };
+
+  useEffect(() => {
+    initGraph();
   }, []);
 
   return (
@@ -83,7 +95,23 @@ export default function IndexPage() {
           {visible ? '关闭' : '打开'}
         </Button>
       </div>
-      <div ref={ref} className={styles.canvas} />
+      <div className={styles.content}>
+        <Sider>
+          <div style={{margin: 16}}>
+            <StartEventNode startDrag={startDrag} />
+          </div>
+          <div style={{margin: 16}}>
+            <ConditionTaskNode startDrag={startDrag} />
+          </div>
+          <div style={{margin: 16}}>
+            <CouponTaskNode startDrag={startDrag} />
+          </div>
+          <div style={{margin: 16}}>
+            <EndEventNode startDrag={startDrag} />
+          </div>
+        </Sider>
+        <div ref={ref} className={styles.canvas} />
+      </div>
       <Drawer
         title="配置栏"
         placement="right"
