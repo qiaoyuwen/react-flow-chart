@@ -44,24 +44,208 @@ export default function IndexPage() {
           ...size,
           shape: 'react-shape',
           component: <StartEventNode />,
+          ports: {
+            groups: {
+              out: {
+                position: 'bottom',
+                attrs: {
+                  circle: {
+                    r: 3,
+                    magnet: true,
+                    stroke: '#ff4d4f',
+                    strokeWidth: 2,
+                    fill: '#fff',
+                  },
+                },
+              },
+            },
+            items: [
+              {
+                id: 'out',
+                group: 'out',
+              },
+            ],
+          },
         });
       } else if (type === NodeDataType.EndEvent) {
         node = graphRef.current.createNode({
           ...size,
           shape: 'react-shape',
           component: <EndEventNode />,
+          ports: {
+            groups: {
+              in: {
+                position: 'top',
+                attrs: {
+                  circle: {
+                    r: 3,
+                    magnet: true,
+                    stroke: '#ff4d4f',
+                    strokeWidth: 2,
+                    fill: '#fff',
+                  },
+                },
+              },
+            },
+            items: [
+              {
+                id: 'top',
+                group: 'in',
+              },
+            ],
+          },
         });
       } else if (type === NodeDataType.ConditionTask) {
         node = graphRef.current.createNode({
           ...size,
           shape: 'react-shape',
           component: <ConditionTaskNode />,
+          ports: {
+            groups: {
+              top: {
+                position: 'top',
+                attrs: {
+                  circle: {
+                    r: 3,
+                    magnet: true,
+                    stroke: '#ff4d4f',
+                    strokeWidth: 2,
+                    fill: '#fff',
+                  },
+                },
+              },
+              right: {
+                position: 'right',
+                attrs: {
+                  circle: {
+                    r: 3,
+                    magnet: true,
+                    stroke: '#ff4d4f',
+                    strokeWidth: 2,
+                    fill: '#fff',
+                  },
+                },
+              },
+              bottom: {
+                position: 'bottom',
+                attrs: {
+                  circle: {
+                    r: 3,
+                    magnet: true,
+                    stroke: '#ff4d4f',
+                    strokeWidth: 2,
+                    fill: '#fff',
+                  },
+                },
+              },
+              left: {
+                position: 'left',
+                attrs: {
+                  circle: {
+                    r: 3,
+                    magnet: true,
+                    stroke: '#ff4d4f',
+                    strokeWidth: 2,
+                    fill: '#fff',
+                  },
+                },
+              },
+            },
+            items: [
+              {
+                id: 'top',
+                group: 'top',
+              },
+              {
+                id: 'right',
+                group: 'right',
+              },
+              {
+                id: 'bottom',
+                group: 'bottom',
+              },
+              {
+                id: 'left',
+                group: 'left',
+              },
+            ],
+          },
         });
       } else if (type === NodeDataType.CouponTask) {
         node = graphRef.current.createNode({
           ...size,
           shape: 'react-shape',
           component: <CouponTaskNode />,
+          ports: {
+            groups: {
+              top: {
+                position: 'top',
+                attrs: {
+                  circle: {
+                    r: 3,
+                    magnet: true,
+                    stroke: '#ff4d4f',
+                    strokeWidth: 2,
+                    fill: '#fff',
+                  },
+                },
+              },
+              right: {
+                position: 'right',
+                attrs: {
+                  circle: {
+                    r: 3,
+                    magnet: true,
+                    stroke: '#ff4d4f',
+                    strokeWidth: 2,
+                    fill: '#fff',
+                  },
+                },
+              },
+              bottom: {
+                position: 'bottom',
+                attrs: {
+                  circle: {
+                    r: 3,
+                    magnet: true,
+                    stroke: '#ff4d4f',
+                    strokeWidth: 2,
+                    fill: '#fff',
+                  },
+                },
+              },
+              left: {
+                position: 'left',
+                attrs: {
+                  circle: {
+                    r: 3,
+                    magnet: true,
+                    stroke: '#ff4d4f',
+                    strokeWidth: 2,
+                    fill: '#fff',
+                  },
+                },
+              },
+            },
+            items: [
+              {
+                id: 'top',
+                group: 'top',
+              },
+              {
+                id: 'right',
+                group: 'right',
+              },
+              {
+                id: 'bottom',
+                group: 'bottom',
+              },
+              {
+                id: 'left',
+                group: 'left',
+              },
+            ],
+          },
         });
       }
 
@@ -97,16 +281,16 @@ export default function IndexPage() {
       </div>
       <div className={styles.content}>
         <Sider>
-          <div style={{margin: 16}}>
+          <div style={{ margin: 16 }}>
             <StartEventNode startDrag={startDrag} />
           </div>
-          <div style={{margin: 16}}>
+          <div style={{ margin: 16 }}>
             <ConditionTaskNode startDrag={startDrag} />
           </div>
-          <div style={{margin: 16}}>
+          <div style={{ margin: 16 }}>
             <CouponTaskNode startDrag={startDrag} />
           </div>
-          <div style={{margin: 16}}>
+          <div style={{ margin: 16 }}>
             <EndEventNode startDrag={startDrag} />
           </div>
         </Sider>
