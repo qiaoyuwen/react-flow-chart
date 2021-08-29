@@ -9,15 +9,13 @@ interface ConditionTaskComponentProps {
 const ConditionTaskComponent: FunctionComponent<ConditionTaskComponentProps> =
   ({ startDrag }) => {
     return (
-      <div className={styles.container}>
-        <div
+      <div
           data-type={NodeDataType.ConditionTask}
           className={styles.box}
           onMouseDown={startDrag}
         >
           <span className={styles.text}>判断框</span>
         </div>
-      </div>
     );
   };
 

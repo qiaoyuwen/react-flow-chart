@@ -1,14 +1,27 @@
-import { NodeDataType } from '../components/enums';
-import StartEventComponent from '../components/start-event';
-import { getNodeSize } from '../components/utils';
+import { Shape } from '@antv/x6';
 import { BottomPort, LeftPort, RightPort, TopPort } from '../ports';
 import { PortGroup, PortType } from '../ports/types';
-import BaseShape from './base';
 
-export class StartEventShape extends BaseShape {
+export class StartEventShape extends Shape.Circle {
   constructor() {
     super({
-      ...getNodeSize(NodeDataType.StartEvent),
+      width: 80,
+      height: 80,
+      label: '开始',
+      attrs: {
+        root: {
+          magnet: false,
+        },
+        body: {
+          strokeWidth: 1,
+          stroke: '#5F95FF',
+          fill: '#EFF4FF',
+        },
+        text: {
+          fontSize: 16,
+          color: '#262626',
+        },
+      },
       ports: {
         groups: {
           [PortGroup.Top]: TopPort,
@@ -36,7 +49,5 @@ export class StartEventShape extends BaseShape {
         ],
       },
     });
-
-    this.component = <StartEventComponent />;
   }
 }
