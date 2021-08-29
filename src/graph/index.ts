@@ -17,6 +17,7 @@ export const createGraph = (container: HTMLElement) => {
       enabled: true,
       rubberband: true,
       showNodeSelectionBox: true,
+      showEdgeSelectionBox: true,
     },
     highlighting: {
       // 高亮
