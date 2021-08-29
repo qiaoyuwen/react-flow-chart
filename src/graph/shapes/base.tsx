@@ -14,6 +14,11 @@ class BaseShape extends ReactShape {
     ports?: Partial<PortManager.Metadata> | PortManager.PortMetadata[];
   }) {
     super({
+      attrs: {
+        root: {
+          magnet: false,
+        },
+      },
       width,
       height,
       shape: 'react-shape',
