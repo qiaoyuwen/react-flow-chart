@@ -1,9 +1,9 @@
 const PortAttr = {
   circle: {
-    r: 4,
+    r: 6,
     magnet: true,
     stroke: '#ffa940',
-    strokeWidth: 1,
+    strokeWidth: 2,
     fill: '#fff',
     style: {
       visibility: 'hidden',

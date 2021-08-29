@@ -42,7 +42,7 @@ export const createGraph = (container: HTMLElement) => {
     connecting: {
       // 连线
       snap: {
-        radius: 20,
+        radius: 30,
       },
       allowBlank: false,
       allowMulti: false,
