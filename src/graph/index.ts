@@ -85,6 +85,7 @@ export const createGraph = (container: HTMLElement) => {
     },
     keyboard: true,
     clipboard: true,
+    history: true,
   });
 
   // 控制连接桩显示/隐藏
@@ -127,6 +128,20 @@ export const createGraph = (container: HTMLElement) => {
       const cells = graph.paste({ offset: 32 });
       graph.cleanSelection();
       graph.select(cells);
+    }
+    return false;
+  });
+
+  // undo redo
+  graph.bindKey(['meta+z', 'ctrl+z'], () => {
+    if (graph.history.canUndo()) {
+      graph.history.undo();
+    }
+    return false;
+  });
+  graph.bindKey(['meta+shift+z', 'ctrl+shift+z'], () => {
+    if (graph.history.canRedo()) {
+      graph.history.redo();
     }
     return false;
   });
