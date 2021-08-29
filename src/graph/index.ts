@@ -72,6 +72,19 @@ export const createGraph = (container: HTMLElement) => {
         });
       },
     },
+    scroller: {
+      enabled: true,
+      pannable: true,
+      modifiers: ['alt'],
+    },
+    mousewheel: {
+      enabled: true,
+      modifiers: ['ctrl', 'meta'],
+      minScale: 0.5,
+      maxScale: 2,
+    },
+    keyboard: true,
+    clipboard: true,
   });
 
   // 控制连接桩显示/隐藏
@@ -91,6 +104,47 @@ export const createGraph = (container: HTMLElement) => {
     portEls.forEach((el) => {
       el.style.visibility = 'hidden';
     });
+  });
+
+  // 快捷键与事件
+  // copy cut paste
+  graph.bindKey(['meta+c', 'ctrl+c'], () => {
+    const cells = graph.getSelectedCells();
+    if (cells.length) {
+      graph.copy(cells);
+    }
+    return false;
+  });
+  graph.bindKey(['meta+x', 'ctrl+x'], () => {
+    const cells = graph.getSelectedCells();
+    if (cells.length) {
+      graph.cut(cells);
+    }
+    return false;
+  });
+  graph.bindKey(['meta+v', 'ctrl+v'], () => {
+    if (!graph.isClipboardEmpty()) {
+      const cells = graph.paste({ offset: 32 });
+      graph.cleanSelection();
+      graph.select(cells);
+    }
+    return false;
+  });
+
+  // select all
+  graph.bindKey(['meta+a', 'ctrl+a'], () => {
+    const nodes = graph.getNodes();
+    if (nodes) {
+      graph.select(nodes);
+    }
+  });
+
+  // delete
+  graph.bindKey('backspace', () => {
+    const cells = graph.getSelectedCells();
+    if (cells.length) {
+      graph.removeCells(cells);
+    }
   });
 
   return graph;
