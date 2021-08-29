@@ -33,7 +33,9 @@ export default function IndexPage() {
     setVisible(false);
   };
 
-  const exportXml = useCallback(async () => {}, []);
+  const exportToJson = useCallback(async () => {
+    console.log('exportToJson', graphRef.current?.toJSON());
+  }, []);
 
   const startDrag = useCallback(
     (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -74,7 +76,7 @@ export default function IndexPage() {
   return (
     <div className={styles.container}>
       <div className={styles.toolbar}>
-        <Button onClick={exportXml}>导出</Button>
+        <Button onClick={exportToJson}>导出</Button>
         <Button
           onClick={visible ? closeDrawer : showDrawer}
           style={{ marginLeft: 20 }}
