@@ -2,11 +2,11 @@ import type { FunctionComponent } from 'react';
 import { NodeDataType } from '../enums';
 import styles from './index.less';
 
-interface StartEventNodeProps {
+interface StartEventComponentProps {
   startDrag?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }
 
-const StartEventNode: FunctionComponent<StartEventNodeProps> = ({
+const StartEventComponent: FunctionComponent<StartEventComponentProps> = ({
   startDrag,
 }) => {
   return (
@@ -16,4 +16,4 @@ const StartEventNode: FunctionComponent<StartEventNodeProps> = ({
   );
 };
 
-export default StartEventNode;
+export default StartEventComponent;

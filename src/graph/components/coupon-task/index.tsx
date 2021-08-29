@@ -2,22 +2,22 @@ import type { FunctionComponent } from 'react';
 import { NodeDataType } from '../enums';
 import styles from './index.less';
 
-interface ConditionTaskNodeProps {
+interface CouponTaskComponentProps {
   startDrag?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }
 
-const ConditionTaskNode: FunctionComponent<ConditionTaskNodeProps> = ({
+const CouponTaskComponent: FunctionComponent<CouponTaskComponentProps> = ({
   startDrag,
 }) => {
   return (
     <div
-      data-type={NodeDataType.ConditionTask}
+      data-type={NodeDataType.CouponTask}
       className={styles.box}
       onMouseDown={startDrag}
     >
-      <span className={styles.text}>判断框</span>
+      推送优惠券
     </div>
   );
 };
 
-export default ConditionTaskNode;
+export default CouponTaskComponent;

@@ -2,22 +2,20 @@ import type { FunctionComponent } from 'react';
 import { NodeDataType } from '../enums';
 import styles from './index.less';
 
-interface CouponTaskNodeProps {
+interface EndEventComponentProps {
   startDrag?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }
 
-const CouponTaskNode: FunctionComponent<CouponTaskNodeProps> = ({
-  startDrag,
-}) => {
+const EndEventComponent: FunctionComponent<EndEventComponentProps> = ({ startDrag }) => {
   return (
     <div
-      data-type={NodeDataType.CouponTask}
-      className={styles.box}
+      data-type={NodeDataType.EndEvent}
+      className={styles.circle}
       onMouseDown={startDrag}
     >
-      推送优惠券
+      结束
     </div>
   );
 };
 
-export default CouponTaskNode;
+export default EndEventComponent;

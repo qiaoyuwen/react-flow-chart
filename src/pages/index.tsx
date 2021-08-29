@@ -8,13 +8,17 @@ import type { Graph } from '@antv/x6';
 import type { Addon } from '@antv/x6';
 import { createDnd, createGraph } from '@/graph';
 import Sider from '@/components/sider';
-import StartEventNode from '@/graph/nodes/start-event';
-import EndEventNode from '@/graph/nodes/end-event';
-import { getDataType, getNodeSize } from '@/graph/nodes/utils';
-import { NodeDataType } from '@/graph/nodes/enums';
+import StartEventComponent from '@/graph/components/start-event';
+import EndEventComponent from '@/graph/components/end-event';
+import { getDataType } from '@/graph/components/utils';
+import { NodeDataType } from '@/graph/components/enums';
 import '@antv/x6-react-shape';
-import ConditionTaskNode from '@/graph/nodes/condition-task';
-import CouponTaskNode from '@/graph/nodes/coupon-task';
+import ConditionTaskComponent from '@/graph/components/condition-task';
+import CouponTaskComponent from '@/graph/components/coupon-task';
+import { StartEventShape } from '@/graph/shapes/start-event';
+import { EndEventShape } from '@/graph/shapes/end-event';
+import { ConditionTaskShape } from '@/graph/shapes/condition-task';
+import { CouponTaskShape } from '@/graph/shapes/coupon-task';
 
 export default function IndexPage() {
   const ref = useRef<HTMLDivElement>(null);
@@ -37,216 +41,15 @@ export default function IndexPage() {
         return;
       }
       const type = getDataType(e.currentTarget);
-      const size = getNodeSize(type);
       let node;
       if (type === NodeDataType.StartEvent) {
-        node = graphRef.current.createNode({
-          ...size,
-          shape: 'react-shape',
-          component: <StartEventNode />,
-          ports: {
-            groups: {
-              out: {
-                position: 'bottom',
-                attrs: {
-                  circle: {
-                    r: 3,
-                    magnet: true,
-                    stroke: '#ff4d4f',
-                    strokeWidth: 2,
-                    fill: '#fff',
-                  },
-                },
-              },
-            },
-            items: [
-              {
-                id: 'out',
-                group: 'out',
-              },
-            ],
-          },
-        });
+        node = new StartEventShape();
       } else if (type === NodeDataType.EndEvent) {
-        node = graphRef.current.createNode({
-          ...size,
-          shape: 'react-shape',
-          component: <EndEventNode />,
-          ports: {
-            groups: {
-              in: {
-                position: 'top',
-                attrs: {
-                  circle: {
-                    r: 3,
-                    magnet: true,
-                    stroke: '#ff4d4f',
-                    strokeWidth: 2,
-                    fill: '#fff',
-                  },
-                },
-              },
-            },
-            items: [
-              {
-                id: 'top',
-                group: 'in',
-              },
-            ],
-          },
-        });
+        node = new EndEventShape();
       } else if (type === NodeDataType.ConditionTask) {
-        node = graphRef.current.createNode({
-          ...size,
-          shape: 'react-shape',
-          component: <ConditionTaskNode />,
-          ports: {
-            groups: {
-              top: {
-                position: 'top',
-                attrs: {
-                  circle: {
-                    r: 3,
-                    magnet: true,
-                    stroke: '#ff4d4f',
-                    strokeWidth: 2,
-                    fill: '#fff',
-                  },
-                },
-              },
-              right: {
-                position: 'right',
-                attrs: {
-                  circle: {
-                    r: 3,
-                    magnet: true,
-                    stroke: '#ff4d4f',
-                    strokeWidth: 2,
-                    fill: '#fff',
-                  },
-                },
-              },
-              bottom: {
-                position: 'bottom',
-                attrs: {
-                  circle: {
-                    r: 3,
-                    magnet: true,
-                    stroke: '#ff4d4f',
-                    strokeWidth: 2,
-                    fill: '#fff',
-                  },
-                },
-              },
-              left: {
-                position: 'left',
-                attrs: {
-                  circle: {
-                    r: 3,
-                    magnet: true,
-                    stroke: '#ff4d4f',
-                    strokeWidth: 2,
-                    fill: '#fff',
-                  },
-                },
-              },
-            },
-            items: [
-              {
-                id: 'top',
-                group: 'top',
-              },
-              {
-                id: 'right',
-                group: 'right',
-              },
-              {
-                id: 'bottom',
-                group: 'bottom',
-              },
-              {
-                id: 'left',
-                group: 'left',
-              },
-            ],
-          },
-        });
+        node = new ConditionTaskShape();
       } else if (type === NodeDataType.CouponTask) {
-        node = graphRef.current.createNode({
-          ...size,
-          shape: 'react-shape',
-          component: <CouponTaskNode />,
-          ports: {
-            groups: {
-              top: {
-                position: 'top',
-                attrs: {
-                  circle: {
-                    r: 3,
-                    magnet: true,
-                    stroke: '#ff4d4f',
-                    strokeWidth: 2,
-                    fill: '#fff',
-                  },
-                },
-              },
-              right: {
-                position: 'right',
-                attrs: {
-                  circle: {
-                    r: 3,
-                    magnet: true,
-                    stroke: '#ff4d4f',
-                    strokeWidth: 2,
-                    fill: '#fff',
-                  },
-                },
-              },
-              bottom: {
-                position: 'bottom',
-                attrs: {
-                  circle: {
-                    r: 3,
-                    magnet: true,
-                    stroke: '#ff4d4f',
-                    strokeWidth: 2,
-                    fill: '#fff',
-                  },
-                },
-              },
-              left: {
-                position: 'left',
-                attrs: {
-                  circle: {
-                    r: 3,
-                    magnet: true,
-                    stroke: '#ff4d4f',
-                    strokeWidth: 2,
-                    fill: '#fff',
-                  },
-                },
-              },
-            },
-            items: [
-              {
-                id: 'top',
-                group: 'top',
-              },
-              {
-                id: 'right',
-                group: 'right',
-              },
-              {
-                id: 'bottom',
-                group: 'bottom',
-              },
-              {
-                id: 'left',
-                group: 'left',
-              },
-            ],
-          },
-        });
+        node = new CouponTaskShape();
       }
 
       if (node) {
@@ -282,16 +85,16 @@ export default function IndexPage() {
       <div className={styles.content}>
         <Sider>
           <div style={{ margin: 16 }}>
-            <StartEventNode startDrag={startDrag} />
+            <StartEventComponent startDrag={startDrag} />
           </div>
           <div style={{ margin: 16 }}>
-            <ConditionTaskNode startDrag={startDrag} />
+            <ConditionTaskComponent startDrag={startDrag} />
           </div>
           <div style={{ margin: 16 }}>
-            <CouponTaskNode startDrag={startDrag} />
+            <CouponTaskComponent startDrag={startDrag} />
           </div>
           <div style={{ margin: 16 }}>
-            <EndEventNode startDrag={startDrag} />
+            <EndEventComponent startDrag={startDrag} />
           </div>
         </Sider>
         <div ref={ref} className={styles.canvas} />
