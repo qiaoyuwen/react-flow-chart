@@ -2,8 +2,9 @@ import type { Node } from '@antv/x6';
 import { Shape } from '@antv/x6';
 import { BottomPort, LeftPort, RightPort, TopPort } from '../ports';
 import { PortGroup, PortType } from '../ports/types';
+import { BaseShape } from './base';
 
-export class CouponTaskShape extends Shape.Rect {
+export class CouponTaskShape extends Shape.Rect implements BaseShape {
   static ShapeKey: string = 'CouponTaskShape';
 
   constructor(property?: Node.Properties) {
@@ -56,5 +57,15 @@ export class CouponTaskShape extends Shape.Rect {
       },
       ...property,
     });
+  }
+
+  canOutEdge() {
+    const usedPorts = BaseShape.getUsedOutPorts(this);
+    return usedPorts.length === 0;
+  }
+
+  canInEdge() {
+    const usedPorts = BaseShape.getUsedInPorts(this);
+    return usedPorts.length === 0;
   }
 }

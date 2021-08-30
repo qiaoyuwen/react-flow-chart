@@ -1,5 +1,6 @@
 /* eslint-disable no-param-reassign */
 import { Addon, Graph, Shape } from '@antv/x6';
+import type { BaseShape } from './shapes/base';
 import { ConditionTaskShape } from './shapes/condition-task';
 import { CouponTaskShape } from './shapes/coupon-task';
 import { EndEventShape } from './shapes/end-event';
@@ -109,11 +110,19 @@ export const createGraph = (container: HTMLElement) => {
   };
 
   // 控制连接桩显示/隐藏
-  graph.on('node:mouseenter', ({ view }) => {
-    const portEls = view.container.querySelectorAll(
-      '.x6-port-body',
-    ) as NodeListOf<SVGElement>;
-    showOrHidePorts(portEls, true);
+  graph.on('node:mouseenter', ({ node, view }) => {
+    const shape = node as unknown as BaseShape;
+    if (shape.canOutEdge) {
+      const canOutEdge = shape.canOutEdge();
+      if (canOutEdge) {
+        const portEls = view.container.querySelectorAll(
+          '.x6-port-body',
+        ) as NodeListOf<SVGElement>;
+        showOrHidePorts(portEls, true);
+      }
+    } else {
+      throw Error(`${node.shape} does not implements BaseShape`);
+    }
   });
 
   graph.on('node:mouseleave', ({ view }) => {

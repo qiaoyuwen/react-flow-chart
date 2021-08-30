@@ -2,8 +2,9 @@ import type { Node } from '@antv/x6';
 import { Shape } from '@antv/x6';
 import { BottomPort, LeftPort, RightPort, TopPort } from '../ports';
 import { PortGroup, PortType } from '../ports/types';
+import { BaseShape } from './base';
 
-export class EndEventShape extends Shape.Circle {
+export class EndEventShape extends Shape.Circle implements BaseShape {
   static ShapeKey: string = 'EndEventShape';
 
   constructor(property?: Node.Properties) {
@@ -54,5 +55,14 @@ export class EndEventShape extends Shape.Circle {
       },
       ...property,
     });
+  }
+
+  canOutEdge() {
+    return false;
+  }
+
+  canInEdge() {
+    const usedPorts = BaseShape.getUsedInPorts(this);
+    return usedPorts.length === 0;
   }
 }

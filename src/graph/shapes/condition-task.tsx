@@ -2,8 +2,9 @@ import type { Node } from '@antv/x6';
 import { Shape } from '@antv/x6';
 import { BottomPort, LeftPort, RightPort, TopPort } from '../ports';
 import { PortGroup, PortType } from '../ports/types';
+import { BaseShape } from './base';
 
-export class ConditionTaskShape extends Shape.Polygon {
+export class ConditionTaskShape extends Shape.Polygon implements BaseShape {
   static ShapeKey: string = 'ConditionTaskShape';
 
   constructor(property?: Node.Properties) {
@@ -55,5 +56,15 @@ export class ConditionTaskShape extends Shape.Polygon {
       },
       ...property,
     });
+  }
+
+  canOutEdge() {
+    const usedPorts = BaseShape.getUsedOutPorts(this);
+    return usedPorts.length === 0;
+  }
+
+  canInEdge() {
+    const usedPorts = BaseShape.getUsedInPorts(this);
+    return usedPorts.length === 0;
   }
 }
