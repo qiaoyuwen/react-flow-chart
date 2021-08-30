@@ -94,23 +94,35 @@ export const createGraph = (container: HTMLElement) => {
     history: true,
   });
 
+  const showOrHidePorts = (
+    ports: NodeListOf<SVGElement>,
+    show: boolean = true,
+  ) => {
+    ports.forEach((el) => {
+      el.style.visibility = show ? 'visible' : 'hidden';
+    });
+  };
+
   // 控制连接桩显示/隐藏
   graph.on('node:mouseenter', ({ view }) => {
     const portEls = view.container.querySelectorAll(
       '.x6-port-body',
     ) as NodeListOf<SVGElement>;
-    portEls.forEach((el) => {
-      el.style.visibility = 'visible';
-    });
+    showOrHidePorts(portEls, true);
   });
 
   graph.on('node:mouseleave', ({ view }) => {
     const portEls = view.container.querySelectorAll(
       '.x6-port-body',
     ) as NodeListOf<SVGElement>;
-    portEls.forEach((el) => {
-      el.style.visibility = 'hidden';
-    });
+    showOrHidePorts(portEls, false);
+  });
+
+  graph.on('node:click', ({ view }) => {
+    const portEls = view.container.querySelectorAll(
+      '.x6-port-body',
+    ) as NodeListOf<SVGElement>;
+    showOrHidePorts(portEls, false);
   });
 
   // 快捷键与事件
