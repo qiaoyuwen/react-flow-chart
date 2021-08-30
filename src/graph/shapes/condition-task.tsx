@@ -60,7 +60,7 @@ export class ConditionTaskShape extends Shape.Polygon implements BaseShape {
 
   canOutEdge() {
     const usedPorts = BaseShape.getUsedOutPorts(this);
-    return usedPorts.length === 0;
+    return usedPorts.length < 2;
   }
 
   canInEdge() {

@@ -83,6 +83,24 @@ export const createGraph = (container: HTMLElement) => {
           zIndex: 0,
         });
       },
+      validateConnection({ targetView, targetMagnet }) {
+        if (!targetMagnet) {
+          return false;
+        }
+
+        if (targetView) {
+          const node = targetView.cell as BaseShape;
+          if (!node.canInEdge) {
+            return false;
+          }
+          const canInEdge = node.canInEdge();
+          if (!canInEdge) {
+            return false;
+          }
+        }
+
+        return true;
+      },
     },
     scroller: {
       enabled: true,
