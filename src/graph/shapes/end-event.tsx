@@ -1,13 +1,17 @@
+import type { Node } from '@antv/x6';
 import { Shape } from '@antv/x6';
 import { BottomPort, LeftPort, RightPort, TopPort } from '../ports';
 import { PortGroup, PortType } from '../ports/types';
 
 export class EndEventShape extends Shape.Circle {
-  constructor() {
+  static ShapeKey: string = 'EndEventShape';
+
+  constructor(property?: Node.Properties) {
     super({
       width: 80,
       height: 80,
       label: '结束',
+      shape: EndEventShape.ShapeKey,
       attrs: {
         root: {
           magnet: false,
@@ -48,6 +52,7 @@ export class EndEventShape extends Shape.Circle {
           },
         ],
       },
+      ...property,
     });
   }
 }

@@ -5,6 +5,11 @@ import { CouponTaskShape } from './shapes/coupon-task';
 import { EndEventShape } from './shapes/end-event';
 import { StartEventShape } from './shapes/start-event';
 
+Graph.registerNode(StartEventShape.ShapeKey, StartEventShape);
+Graph.registerNode(EndEventShape.ShapeKey, EndEventShape);
+Graph.registerNode(ConditionTaskShape.ShapeKey, ConditionTaskShape);
+Graph.registerNode(CouponTaskShape.ShapeKey, CouponTaskShape);
+
 export const createGraph = (container: HTMLElement) => {
   const graph = new Graph({
     container,

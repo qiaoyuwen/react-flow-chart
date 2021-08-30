@@ -9,15 +9,15 @@
           "targetMarker": { "name": "classic", "size": 7 }
         }
       },
-      "id": "2176172f-a921-4a92-8e43-896539073a72",
+      "id": "00961c63-b4a7-4d69-8e7c-fd14f099dc4e",
       "zIndex": 0,
       "source": {
-        "cell": "c45595cd-bf36-486e-afe0-66b9eb60ef92",
-        "port": "8b2524fd-8e6a-4e2e-9d93-a202eb235651"
+        "cell": "65b5106c-d1e8-4382-a771-44f520808df5",
+        "port": "34d35466-9bb2-45dc-b73a-09603caad203"
       },
       "target": {
-        "cell": "8fb35cc0-6d65-4820-ae5b-1020195f8b4a",
-        "port": "670ec68d-1ac7-4b62-890c-c8ccfa881fd1"
+        "cell": "b294c9db-d236-46e4-966e-49bd46d07183",
+        "port": "cd071eab-f480-40bb-bf3f-588dee76ac30"
       }
     },
     {
@@ -29,15 +29,15 @@
           "targetMarker": { "name": "classic", "size": 7 }
         }
       },
-      "id": "9fd62108-f7f4-46d0-8c35-a088a3c7b22d",
+      "id": "aa0cf1b6-165f-41a2-a8b0-29978767482c",
       "zIndex": 0,
       "source": {
-        "cell": "8fb35cc0-6d65-4820-ae5b-1020195f8b4a",
-        "port": "267d536d-0740-42c3-96a9-951ce0244a77"
+        "cell": "b294c9db-d236-46e4-966e-49bd46d07183",
+        "port": "e18b5cdd-7fc7-4532-9f7e-86abea560faf"
       },
       "target": {
-        "cell": "543f360f-5af9-41e5-b09f-8b31965f4f29",
-        "port": "763b95bf-363c-442a-b9d7-235b85a4f1e8"
+        "cell": "e18ce472-b4c4-4781-9add-98504f45532c",
+        "port": "63c26042-818b-49e8-9def-81b3f11c2af3"
       }
     },
     {
@@ -49,15 +49,15 @@
           "targetMarker": { "name": "classic", "size": 7 }
         }
       },
-      "id": "027ec3c6-5fc8-48db-a9a4-9d3489b138cc",
+      "id": "7b7590c0-c71f-49f0-a267-126a0e5adce7",
       "zIndex": 0,
       "source": {
-        "cell": "8fb35cc0-6d65-4820-ae5b-1020195f8b4a",
-        "port": "20a7706e-3d0a-4fcb-9df3-fef36e39de86"
+        "cell": "e18ce472-b4c4-4781-9add-98504f45532c",
+        "port": "a03b3edf-907c-405f-8728-b332f4918afe"
       },
       "target": {
-        "cell": "9ce14108-5226-4ee7-8df0-2893ffc34726",
-        "port": "8c8178b3-5e47-447e-9bb6-108c6caf9863"
+        "cell": "5dda0ceb-2aec-4039-80d6-9a325195b92c",
+        "port": "04a271ff-df96-44a0-9ca7-7d5ad514cb5c"
       }
     },
     {
@@ -69,27 +69,27 @@
           "targetMarker": { "name": "classic", "size": 7 }
         }
       },
-      "id": "fa2c5baa-dd2e-4f6a-8111-462119289d75",
+      "id": "4ae3574d-0726-433a-a8c9-2962f4ab4c73",
       "zIndex": 0,
       "source": {
-        "cell": "9ce14108-5226-4ee7-8df0-2893ffc34726",
-        "port": "ad078b79-6950-4206-b395-a24ae3588ae3"
+        "cell": "b294c9db-d236-46e4-966e-49bd46d07183",
+        "port": "f9fa4d38-62b6-46ca-83b2-fd3cda5b0144"
       },
       "target": {
-        "cell": "99e8b4d0-89d4-4f3c-915d-6af272021aff",
-        "port": "74f6a53d-5570-4667-88c5-ebb37dcb0ce0"
+        "cell": "e6b8b810-3c40-4abc-b04e-a1c647f14517",
+        "port": "d88a1616-7acc-4a8b-83b0-e4acba5015d4"
       }
     },
     {
-      "position": { "x": 320, "y": 110 },
+      "position": { "x": 340, "y": 100 },
       "size": { "width": 80, "height": 80 },
       "attrs": {
         "text": { "fontSize": 16, "color": "#262626", "text": "开始" },
         "body": { "strokeWidth": 1, "stroke": "#5F95FF", "fill": "#EFF4FF" },
         "root": { "magnet": false }
       },
-      "shape": "circle",
-      "id": "c45595cd-bf36-486e-afe0-66b9eb60ef92",
+      "shape": "StartEventShape",
+      "id": "65b5106c-d1e8-4382-a771-44f520808df5",
       "ports": {
         "groups": {
           "Top": {
@@ -149,37 +149,37 @@
           {
             "type": "InAndOut",
             "group": "Top",
-            "id": "22134fa5-7ef6-4fef-8b1c-3c956ee94b87"
+            "id": "5039dd53-2ebb-44f9-8b3e-5d815d3527be"
           },
           {
             "type": "InAndOut",
             "group": "Right",
-            "id": "5b580766-811d-463b-a1b9-a77dfaf88434"
+            "id": "1579154f-3ecd-4d89-b603-95c4aa70b9f8"
           },
           {
             "type": "InAndOut",
             "group": "Bottom",
-            "id": "8b2524fd-8e6a-4e2e-9d93-a202eb235651"
+            "id": "34d35466-9bb2-45dc-b73a-09603caad203"
           },
           {
             "type": "InAndOut",
             "group": "Left",
-            "id": "63d5aa0d-64c2-44dc-8446-19557fa5d7d5"
+            "id": "d2efb161-24bf-45b5-a630-af81438d2d31"
           }
         ]
       },
       "zIndex": 1
     },
     {
-      "position": { "x": 320, "y": 710 },
+      "position": { "x": 340, "y": 696 },
       "size": { "width": 80, "height": 80 },
       "attrs": {
         "text": { "fontSize": 16, "color": "#262626", "text": "结束" },
         "body": { "strokeWidth": 1, "stroke": "#5F95FF", "fill": "#EFF4FF" },
         "root": { "magnet": false }
       },
-      "shape": "circle",
-      "id": "99e8b4d0-89d4-4f3c-915d-6af272021aff",
+      "shape": "EndEventShape",
+      "id": "5dda0ceb-2aec-4039-80d6-9a325195b92c",
       "ports": {
         "groups": {
           "Top": {
@@ -239,29 +239,29 @@
           {
             "type": "InAndOut",
             "group": "Top",
-            "id": "74f6a53d-5570-4667-88c5-ebb37dcb0ce0"
+            "id": "04a271ff-df96-44a0-9ca7-7d5ad514cb5c"
           },
           {
             "type": "InAndOut",
             "group": "Right",
-            "id": "7c8f1e18-1618-4f7d-ba27-4962a56b40c7"
+            "id": "ebb046af-0aeb-4ddc-9fc2-d1d78a10a6c1"
           },
           {
             "type": "InAndOut",
             "group": "Bottom",
-            "id": "af0d8881-02df-40a7-8212-c913df5cae3f"
+            "id": "08bbfb17-f5a5-4787-a8f8-c8949fcad2f7"
           },
           {
             "type": "InAndOut",
             "group": "Left",
-            "id": "d7f8fc3e-d8b3-4f88-ae72-09a3b833266e"
+            "id": "72cc509f-d69b-4b08-aa70-887a75bff6c0"
           }
         ]
       },
       "zIndex": 2
     },
     {
-      "position": { "x": 310, "y": 279 },
+      "position": { "x": 330, "y": 274 },
       "size": { "width": 100, "height": 100 },
       "attrs": {
         "text": { "fontSize": 16, "color": "#262626", "text": "判断框" },
@@ -273,8 +273,8 @@
           "fill": "#EFF4FF"
         }
       },
-      "shape": "polygon",
-      "id": "8fb35cc0-6d65-4820-ae5b-1020195f8b4a",
+      "shape": "ConditionTaskShape",
+      "id": "b294c9db-d236-46e4-966e-49bd46d07183",
       "ports": {
         "groups": {
           "Top": {
@@ -334,29 +334,29 @@
           {
             "type": "InAndOut",
             "group": "Top",
-            "id": "670ec68d-1ac7-4b62-890c-c8ccfa881fd1"
+            "id": "cd071eab-f480-40bb-bf3f-588dee76ac30"
           },
           {
             "type": "InAndOut",
             "group": "Right",
-            "id": "267d536d-0740-42c3-96a9-951ce0244a77"
+            "id": "f9fa4d38-62b6-46ca-83b2-fd3cda5b0144"
           },
           {
             "type": "InAndOut",
             "group": "Bottom",
-            "id": "20a7706e-3d0a-4fcb-9df3-fef36e39de86"
+            "id": "e18b5cdd-7fc7-4532-9f7e-86abea560faf"
           },
           {
             "type": "InAndOut",
             "group": "Left",
-            "id": "0476734c-3f34-4bb3-b54b-754c1cbc7c6a"
+            "id": "67815421-c0ef-48d3-bece-5d2bb829a43b"
           }
         ]
       },
       "zIndex": 3
     },
     {
-      "position": { "x": 300, "y": 489 },
+      "position": { "x": 320, "y": 488 },
       "size": { "width": 120, "height": 80 },
       "attrs": {
         "text": { "fontSize": 16, "color": "#262626", "text": "推送优惠券" },
@@ -369,8 +369,8 @@
         },
         "root": { "magnet": false }
       },
-      "shape": "rect",
-      "id": "9ce14108-5226-4ee7-8df0-2893ffc34726",
+      "shape": "CouponTaskShape",
+      "id": "e18ce472-b4c4-4781-9add-98504f45532c",
       "ports": {
         "groups": {
           "Top": {
@@ -430,37 +430,37 @@
           {
             "type": "InAndOut",
             "group": "Top",
-            "id": "8c8178b3-5e47-447e-9bb6-108c6caf9863"
+            "id": "63c26042-818b-49e8-9def-81b3f11c2af3"
           },
           {
             "type": "InAndOut",
             "group": "Right",
-            "id": "5495eb9d-7484-4aaf-9bbf-23dd64a78f1e"
+            "id": "e8fc4df7-ee1b-4668-b7d1-37819ac49dab"
           },
           {
             "type": "InAndOut",
             "group": "Bottom",
-            "id": "ad078b79-6950-4206-b395-a24ae3588ae3"
+            "id": "a03b3edf-907c-405f-8728-b332f4918afe"
           },
           {
             "type": "InAndOut",
             "group": "Left",
-            "id": "69d6f9b7-8d13-4644-94f6-b5c77e88f707"
+            "id": "737b1f53-dde0-4a16-b555-72db36905304"
           }
         ]
       },
       "zIndex": 4
     },
     {
-      "position": { "x": 678, "y": 289 },
+      "position": { "x": 641, "y": 284 },
       "size": { "width": 80, "height": 80 },
       "attrs": {
         "text": { "fontSize": 16, "color": "#262626", "text": "结束" },
         "body": { "strokeWidth": 1, "stroke": "#5F95FF", "fill": "#EFF4FF" },
         "root": { "magnet": false }
       },
-      "shape": "circle",
-      "id": "543f360f-5af9-41e5-b09f-8b31965f4f29",
+      "shape": "EndEventShape",
+      "id": "e6b8b810-3c40-4abc-b04e-a1c647f14517",
       "ports": {
         "groups": {
           "Top": {
@@ -520,22 +520,22 @@
           {
             "type": "InAndOut",
             "group": "Top",
-            "id": "7f099d6b-c1b7-4e4a-ad5a-6213379634e6"
+            "id": "1c440423-9c38-43d4-b005-d278f39fb5f2"
           },
           {
             "type": "InAndOut",
             "group": "Right",
-            "id": "62505f3b-056b-4243-8375-5acd602653aa"
+            "id": "8da84d4e-b06a-4c5f-9d12-002bf842414b"
           },
           {
             "type": "InAndOut",
             "group": "Bottom",
-            "id": "2d187e33-1e69-4944-969d-aa90746a7e16"
+            "id": "bbec0c75-e5ee-405a-b0d2-f312ab720cf0"
           },
           {
             "type": "InAndOut",
             "group": "Left",
-            "id": "763b95bf-363c-442a-b9d7-235b85a4f1e8"
+            "id": "d88a1616-7acc-4a8b-83b0-e4acba5015d4"
           }
         ]
       },

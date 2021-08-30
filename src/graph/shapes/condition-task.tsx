@@ -1,13 +1,17 @@
+import type { Node } from '@antv/x6';
 import { Shape } from '@antv/x6';
 import { BottomPort, LeftPort, RightPort, TopPort } from '../ports';
 import { PortGroup, PortType } from '../ports/types';
 
 export class ConditionTaskShape extends Shape.Polygon {
-  constructor() {
+  static ShapeKey: string = 'ConditionTaskShape';
+
+  constructor(property?: Node.Properties) {
     super({
       width: 100,
       height: 100,
       label: '判断框',
+      shape: ConditionTaskShape.ShapeKey,
       attrs: {
         root: {
           magnet: false,
@@ -49,6 +53,7 @@ export class ConditionTaskShape extends Shape.Polygon {
           },
         ],
       },
+      ...property,
     });
   }
 }

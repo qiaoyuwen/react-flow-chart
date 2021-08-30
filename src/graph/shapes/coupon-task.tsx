@@ -1,13 +1,17 @@
+import type { Node } from '@antv/x6';
 import { Shape } from '@antv/x6';
 import { BottomPort, LeftPort, RightPort, TopPort } from '../ports';
 import { PortGroup, PortType } from '../ports/types';
 
 export class CouponTaskShape extends Shape.Rect {
-  constructor() {
+  static ShapeKey: string = 'CouponTaskShape';
+
+  constructor(property?: Node.Properties) {
     super({
       width: 120,
       height: 80,
       label: '推送优惠券',
+      shape: CouponTaskShape.ShapeKey,
       attrs: {
         root: {
           magnet: false,
@@ -50,6 +54,7 @@ export class CouponTaskShape extends Shape.Rect {
           },
         ],
       },
+      ...property,
     });
   }
 }

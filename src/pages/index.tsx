@@ -18,6 +18,9 @@ export default function IndexPage() {
   const stencilRef = useRef<Addon.Stencil>();
 
   const exportToJson = useCallback(async () => {
+    if (!graphRef.current) {
+      return;
+    }
     console.log(
       'exportToJson',
       graphRef.current?.toJSON(),

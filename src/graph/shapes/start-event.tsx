@@ -1,12 +1,16 @@
+import type { Node } from '@antv/x6';
 import { Shape } from '@antv/x6';
 import { BottomPort, LeftPort, RightPort, TopPort } from '../ports';
 import { PortGroup, PortType } from '../ports/types';
 
 export class StartEventShape extends Shape.Circle {
-  constructor() {
+  static ShapeKey: string = 'StartEventShape';
+
+  constructor(property?: Node.Properties) {
     super({
       width: 80,
       height: 80,
+      shape: StartEventShape.ShapeKey,
       label: '开始',
       attrs: {
         root: {
@@ -48,6 +52,7 @@ export class StartEventShape extends Shape.Circle {
           },
         ],
       },
+      ...property,
     });
   }
 }
