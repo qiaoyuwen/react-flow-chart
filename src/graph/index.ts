@@ -1,5 +1,9 @@
 /* eslint-disable no-param-reassign */
 import { Addon, Graph, Shape } from '@antv/x6';
+import { ConditionTaskShape } from './shapes/condition-task';
+import { CouponTaskShape } from './shapes/coupon-task';
+import { EndEventShape } from './shapes/end-event';
+import { StartEventShape } from './shapes/start-event';
 
 export const createGraph = (container: HTMLElement) => {
   const graph = new Graph({
@@ -70,6 +74,7 @@ export const createGraph = (container: HTMLElement) => {
               },
             },
           },
+          zIndex: 0,
         });
       },
     },
@@ -171,4 +176,27 @@ export const createDnd = (graph: Graph) => {
     target: graph,
     animation: true,
   });
+};
+
+export const createStencil = (graph: Graph) => {
+  const stencil = new Addon.Stencil({
+    title: '组件栏',
+    target: graph,
+    stencilGraphWidth: 300,
+    collapsable: false,
+    layoutOptions: {
+      columns: 2,
+      columnWidth: 140,
+      rowHeight: 120,
+    },
+  });
+
+  stencil.load([
+    new StartEventShape(),
+    new ConditionTaskShape(),
+    new CouponTaskShape(),
+    new EndEventShape(),
+  ]);
+
+  return stencil;
 };

@@ -1,0 +1,545 @@
+{
+  "cells": [
+    {
+      "shape": "edge",
+      "attrs": {
+        "line": {
+          "stroke": "#a0a0a0",
+          "strokeWidth": 1,
+          "targetMarker": { "name": "classic", "size": 7 }
+        }
+      },
+      "id": "2176172f-a921-4a92-8e43-896539073a72",
+      "zIndex": 0,
+      "source": {
+        "cell": "c45595cd-bf36-486e-afe0-66b9eb60ef92",
+        "port": "8b2524fd-8e6a-4e2e-9d93-a202eb235651"
+      },
+      "target": {
+        "cell": "8fb35cc0-6d65-4820-ae5b-1020195f8b4a",
+        "port": "670ec68d-1ac7-4b62-890c-c8ccfa881fd1"
+      }
+    },
+    {
+      "shape": "edge",
+      "attrs": {
+        "line": {
+          "stroke": "#a0a0a0",
+          "strokeWidth": 1,
+          "targetMarker": { "name": "classic", "size": 7 }
+        }
+      },
+      "id": "9fd62108-f7f4-46d0-8c35-a088a3c7b22d",
+      "zIndex": 0,
+      "source": {
+        "cell": "8fb35cc0-6d65-4820-ae5b-1020195f8b4a",
+        "port": "267d536d-0740-42c3-96a9-951ce0244a77"
+      },
+      "target": {
+        "cell": "543f360f-5af9-41e5-b09f-8b31965f4f29",
+        "port": "763b95bf-363c-442a-b9d7-235b85a4f1e8"
+      }
+    },
+    {
+      "shape": "edge",
+      "attrs": {
+        "line": {
+          "stroke": "#a0a0a0",
+          "strokeWidth": 1,
+          "targetMarker": { "name": "classic", "size": 7 }
+        }
+      },
+      "id": "027ec3c6-5fc8-48db-a9a4-9d3489b138cc",
+      "zIndex": 0,
+      "source": {
+        "cell": "8fb35cc0-6d65-4820-ae5b-1020195f8b4a",
+        "port": "20a7706e-3d0a-4fcb-9df3-fef36e39de86"
+      },
+      "target": {
+        "cell": "9ce14108-5226-4ee7-8df0-2893ffc34726",
+        "port": "8c8178b3-5e47-447e-9bb6-108c6caf9863"
+      }
+    },
+    {
+      "shape": "edge",
+      "attrs": {
+        "line": {
+          "stroke": "#a0a0a0",
+          "strokeWidth": 1,
+          "targetMarker": { "name": "classic", "size": 7 }
+        }
+      },
+      "id": "fa2c5baa-dd2e-4f6a-8111-462119289d75",
+      "zIndex": 0,
+      "source": {
+        "cell": "9ce14108-5226-4ee7-8df0-2893ffc34726",
+        "port": "ad078b79-6950-4206-b395-a24ae3588ae3"
+      },
+      "target": {
+        "cell": "99e8b4d0-89d4-4f3c-915d-6af272021aff",
+        "port": "74f6a53d-5570-4667-88c5-ebb37dcb0ce0"
+      }
+    },
+    {
+      "position": { "x": 320, "y": 110 },
+      "size": { "width": 80, "height": 80 },
+      "attrs": {
+        "text": { "fontSize": 16, "color": "#262626", "text": "开始" },
+        "body": { "strokeWidth": 1, "stroke": "#5F95FF", "fill": "#EFF4FF" },
+        "root": { "magnet": false }
+      },
+      "shape": "circle",
+      "id": "c45595cd-bf36-486e-afe0-66b9eb60ef92",
+      "ports": {
+        "groups": {
+          "Top": {
+            "position": "top",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          },
+          "Right": {
+            "position": "right",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          },
+          "Bottom": {
+            "position": "bottom",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          },
+          "Left": {
+            "position": "left",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          }
+        },
+        "items": [
+          {
+            "type": "InAndOut",
+            "group": "Top",
+            "id": "22134fa5-7ef6-4fef-8b1c-3c956ee94b87"
+          },
+          {
+            "type": "InAndOut",
+            "group": "Right",
+            "id": "5b580766-811d-463b-a1b9-a77dfaf88434"
+          },
+          {
+            "type": "InAndOut",
+            "group": "Bottom",
+            "id": "8b2524fd-8e6a-4e2e-9d93-a202eb235651"
+          },
+          {
+            "type": "InAndOut",
+            "group": "Left",
+            "id": "63d5aa0d-64c2-44dc-8446-19557fa5d7d5"
+          }
+        ]
+      },
+      "zIndex": 1
+    },
+    {
+      "position": { "x": 320, "y": 710 },
+      "size": { "width": 80, "height": 80 },
+      "attrs": {
+        "text": { "fontSize": 16, "color": "#262626", "text": "结束" },
+        "body": { "strokeWidth": 1, "stroke": "#5F95FF", "fill": "#EFF4FF" },
+        "root": { "magnet": false }
+      },
+      "shape": "circle",
+      "id": "99e8b4d0-89d4-4f3c-915d-6af272021aff",
+      "ports": {
+        "groups": {
+          "Top": {
+            "position": "top",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          },
+          "Right": {
+            "position": "right",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          },
+          "Bottom": {
+            "position": "bottom",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          },
+          "Left": {
+            "position": "left",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          }
+        },
+        "items": [
+          {
+            "type": "InAndOut",
+            "group": "Top",
+            "id": "74f6a53d-5570-4667-88c5-ebb37dcb0ce0"
+          },
+          {
+            "type": "InAndOut",
+            "group": "Right",
+            "id": "7c8f1e18-1618-4f7d-ba27-4962a56b40c7"
+          },
+          {
+            "type": "InAndOut",
+            "group": "Bottom",
+            "id": "af0d8881-02df-40a7-8212-c913df5cae3f"
+          },
+          {
+            "type": "InAndOut",
+            "group": "Left",
+            "id": "d7f8fc3e-d8b3-4f88-ae72-09a3b833266e"
+          }
+        ]
+      },
+      "zIndex": 2
+    },
+    {
+      "position": { "x": 310, "y": 279 },
+      "size": { "width": 100, "height": 100 },
+      "attrs": {
+        "text": { "fontSize": 16, "color": "#262626", "text": "判断框" },
+        "root": { "magnet": false },
+        "body": {
+          "refPoints": "0,10 10,0 20,10 10,20",
+          "strokeWidth": 1,
+          "stroke": "#5F95FF",
+          "fill": "#EFF4FF"
+        }
+      },
+      "shape": "polygon",
+      "id": "8fb35cc0-6d65-4820-ae5b-1020195f8b4a",
+      "ports": {
+        "groups": {
+          "Top": {
+            "position": "top",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          },
+          "Right": {
+            "position": "right",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          },
+          "Bottom": {
+            "position": "bottom",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          },
+          "Left": {
+            "position": "left",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          }
+        },
+        "items": [
+          {
+            "type": "InAndOut",
+            "group": "Top",
+            "id": "670ec68d-1ac7-4b62-890c-c8ccfa881fd1"
+          },
+          {
+            "type": "InAndOut",
+            "group": "Right",
+            "id": "267d536d-0740-42c3-96a9-951ce0244a77"
+          },
+          {
+            "type": "InAndOut",
+            "group": "Bottom",
+            "id": "20a7706e-3d0a-4fcb-9df3-fef36e39de86"
+          },
+          {
+            "type": "InAndOut",
+            "group": "Left",
+            "id": "0476734c-3f34-4bb3-b54b-754c1cbc7c6a"
+          }
+        ]
+      },
+      "zIndex": 3
+    },
+    {
+      "position": { "x": 300, "y": 489 },
+      "size": { "width": 120, "height": 80 },
+      "attrs": {
+        "text": { "fontSize": 16, "color": "#262626", "text": "推送优惠券" },
+        "body": {
+          "strokeWidth": 1,
+          "stroke": "#5F95FF",
+          "fill": "#EFF4FF",
+          "rx": 5,
+          "ry": 5
+        },
+        "root": { "magnet": false }
+      },
+      "shape": "rect",
+      "id": "9ce14108-5226-4ee7-8df0-2893ffc34726",
+      "ports": {
+        "groups": {
+          "Top": {
+            "position": "top",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          },
+          "Right": {
+            "position": "right",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          },
+          "Bottom": {
+            "position": "bottom",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          },
+          "Left": {
+            "position": "left",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          }
+        },
+        "items": [
+          {
+            "type": "InAndOut",
+            "group": "Top",
+            "id": "8c8178b3-5e47-447e-9bb6-108c6caf9863"
+          },
+          {
+            "type": "InAndOut",
+            "group": "Right",
+            "id": "5495eb9d-7484-4aaf-9bbf-23dd64a78f1e"
+          },
+          {
+            "type": "InAndOut",
+            "group": "Bottom",
+            "id": "ad078b79-6950-4206-b395-a24ae3588ae3"
+          },
+          {
+            "type": "InAndOut",
+            "group": "Left",
+            "id": "69d6f9b7-8d13-4644-94f6-b5c77e88f707"
+          }
+        ]
+      },
+      "zIndex": 4
+    },
+    {
+      "position": { "x": 678, "y": 289 },
+      "size": { "width": 80, "height": 80 },
+      "attrs": {
+        "text": { "fontSize": 16, "color": "#262626", "text": "结束" },
+        "body": { "strokeWidth": 1, "stroke": "#5F95FF", "fill": "#EFF4FF" },
+        "root": { "magnet": false }
+      },
+      "shape": "circle",
+      "id": "543f360f-5af9-41e5-b09f-8b31965f4f29",
+      "ports": {
+        "groups": {
+          "Top": {
+            "position": "top",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          },
+          "Right": {
+            "position": "right",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          },
+          "Bottom": {
+            "position": "bottom",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          },
+          "Left": {
+            "position": "left",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          }
+        },
+        "items": [
+          {
+            "type": "InAndOut",
+            "group": "Top",
+            "id": "7f099d6b-c1b7-4e4a-ad5a-6213379634e6"
+          },
+          {
+            "type": "InAndOut",
+            "group": "Right",
+            "id": "62505f3b-056b-4243-8375-5acd602653aa"
+          },
+          {
+            "type": "InAndOut",
+            "group": "Bottom",
+            "id": "2d187e33-1e69-4944-969d-aa90746a7e16"
+          },
+          {
+            "type": "InAndOut",
+            "group": "Left",
+            "id": "763b95bf-363c-442a-b9d7-235b85a4f1e8"
+          }
+        ]
+      },
+      "zIndex": 5
+    }
+  ]
+}

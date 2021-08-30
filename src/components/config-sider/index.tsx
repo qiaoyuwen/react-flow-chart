@@ -1,13 +1,13 @@
 import type { FunctionComponent } from 'react';
 import styles from './index.less';
 
-const Sider: FunctionComponent = ({ children }) => {
+const ConfigSider: FunctionComponent = ({ children }) => {
   return (
     <div className={styles.sider}>
-      <div className={styles.title}>组件栏</div>
+      <div className={styles.title}>配置栏</div>
       <div className={styles.content}>{children}</div>
     </div>
   );
 };
 
-export default Sider;
+export default ConfigSider;
