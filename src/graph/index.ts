@@ -1,18 +1,23 @@
 /* eslint-disable no-param-reassign */
 import { Addon, Graph, Shape } from '@antv/x6';
+import { BooleanEdge } from './edges/boolean-edge';
 import type { BaseShape } from './shapes/base';
 import { ConditionTaskShape } from './shapes/condition-task';
 import { CouponTaskShape } from './shapes/coupon-task';
 import { EndEventShape } from './shapes/end-event';
 import { StartEventShape } from './shapes/start-event';
 
+// 注册节点
 Graph.registerNode(StartEventShape.ShapeKey, StartEventShape);
 Graph.registerNode(EndEventShape.ShapeKey, EndEventShape);
 Graph.registerNode(ConditionTaskShape.ShapeKey, ConditionTaskShape);
 Graph.registerNode(CouponTaskShape.ShapeKey, CouponTaskShape);
 
+// 注册边
+Graph.registerEdge(BooleanEdge.ShapeKey, BooleanEdge);
+
 export const createGraph = (container: HTMLElement) => {
-  const graph = new Graph({
+  const graph: Graph = new Graph({
     container,
     background: {
       color: '#fff', // 设置画布背景颜色
@@ -68,7 +73,16 @@ export const createGraph = (container: HTMLElement) => {
       router: 'manhattan',
       anchor: 'center',
       connectionPoint: 'anchor',
-      createEdge() {
+      createEdge({ sourceCell }) {
+        if (sourceCell instanceof ConditionTaskShape) {
+          const edge = (graph.getOutgoingEdges(sourceCell) || [])[0];
+          if (edge instanceof BooleanEdge) {
+            return new BooleanEdge({
+              value: !edge.value,
+            });
+          }
+          return new BooleanEdge();
+        }
         return new Shape.Edge({
           attrs: {
             line: {
@@ -80,7 +94,6 @@ export const createGraph = (container: HTMLElement) => {
               },
             },
           },
-          zIndex: 0,
         });
       },
       validateConnection({ targetView, targetMagnet }) {
