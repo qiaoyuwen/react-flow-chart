@@ -84,4 +84,12 @@ export class ConditionTaskShape extends Shape.Polygon implements BaseShape {
   changeValues(values: ConditionTaskShapeFormData) {
     this.values = values;
   }
+
+  toJSON() {
+    const newJson: Node.Properties & { values: ConditionTaskShapeFormData } = {
+      ...super.toJSON(),
+      values: this.values,
+    };
+    return newJson;
+  }
 }
