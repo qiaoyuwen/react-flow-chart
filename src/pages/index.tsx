@@ -49,6 +49,12 @@ export default function IndexPage() {
     graphRef.current.on('blank:click', () => {
       setSelectedCell(undefined);
     });
+    graphRef.current.on('node:removed', () => {
+      setSelectedCell(undefined);
+    });
+    graphRef.current.on('edge:removed', () => {
+      setSelectedCell(undefined);
+    });
 
     dndRef.current = createDnd(graphRef.current);
     stencilRef.current = createStencil(graphRef.current);

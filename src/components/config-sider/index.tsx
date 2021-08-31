@@ -3,6 +3,8 @@ import type { FunctionComponent } from 'react';
 import styles from './index.less';
 import { BooleanEdge } from '@/graph/edges/boolean-edge';
 import BooleanEdgeForm from '../boolean-edge-form';
+import { ConditionTaskShape } from '@/graph/shapes/condition-task';
+import ConditionTaskForm from '../condition-task-form';
 
 interface ConfigSiderProps {
   cell?: Cell;
@@ -15,6 +17,9 @@ const ConfigSider: FunctionComponent<ConfigSiderProps> = ({ cell }) => {
       {cell && (
         <div className={styles.content}>
           {cell instanceof BooleanEdge && <BooleanEdgeForm edge={cell} />}
+          {cell instanceof ConditionTaskShape && (
+            <ConditionTaskForm node={cell} />
+          )}
         </div>
       )}
     </div>

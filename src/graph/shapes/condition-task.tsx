@@ -1,13 +1,25 @@
+import type {
+  CompareType,
+  ConditionValueType,
+} from '@/components/condition-task-form/constant';
 import type { Node } from '@antv/x6';
 import { Shape } from '@antv/x6';
 import { BottomPort, LeftPort, RightPort, TopPort } from '../ports';
 import { PortGroup, PortType } from '../ports/types';
 import { BaseShape } from './base';
 
+export interface ConditionTaskShapeFormData {
+  valueType?: ConditionValueType;
+  value?: number;
+  compareType?: CompareType;
+}
 export class ConditionTaskShape extends Shape.Polygon implements BaseShape {
   static ShapeKey: string = 'ConditionTaskShape';
+  values: ConditionTaskShapeFormData = {};
 
-  constructor(property?: Node.Properties) {
+  constructor(
+    property?: Node.Properties & { values?: ConditionTaskShapeFormData },
+  ) {
     super({
       width: 100,
       height: 100,
@@ -56,6 +68,7 @@ export class ConditionTaskShape extends Shape.Polygon implements BaseShape {
       },
       ...property,
     });
+    this.values = property?.values || {};
   }
 
   canOutEdge() {
@@ -66,5 +79,9 @@ export class ConditionTaskShape extends Shape.Polygon implements BaseShape {
   canInEdge() {
     const usedPorts = BaseShape.getUsedInPorts(this);
     return usedPorts.length === 0;
+  }
+
+  changeValues(values: ConditionTaskShapeFormData) {
+    this.values = values;
   }
 }
