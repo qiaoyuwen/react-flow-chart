@@ -31,6 +31,7 @@ const ConditionTaskForm: FunctionComponent<ConditionTaskFormProps> = ({
     if (!formRef.current) {
       return;
     }
+    formRef.current.resetFields();
     formRef.current.setFieldsValue(node.values);
   }, [node]);
 

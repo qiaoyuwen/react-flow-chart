@@ -17,6 +17,7 @@ const BooleanEdgeForm: FunctionComponent<BooleanEdgeFormProps> = ({ edge }) => {
     if (!formRef.current) {
       return;
     }
+    formRef.current.resetFields();
     formRef.current.setFieldsValue({
       value: edge.value,
     });
