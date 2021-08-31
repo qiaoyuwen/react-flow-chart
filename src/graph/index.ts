@@ -122,7 +122,7 @@ export const createGraph = (container: HTMLElement) => {
     },
     mousewheel: {
       enabled: true,
-      modifiers: ['ctrl', 'meta'],
+      modifiers: ['alt'],
       minScale: 0.5,
       maxScale: 2,
     },
