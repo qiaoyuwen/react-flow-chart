@@ -9,56 +9,6 @@
           "targetMarker": { "name": "classic", "size": 7 }
         }
       },
-      "id": "ee336d25-fef9-492b-8a63-8d73c63384b6",
-      "defaultLabel": {
-        "markup": [
-          { "tagName": "rect", "selector": "body" },
-          { "tagName": "text", "selector": "label" }
-        ],
-        "attrs": {
-          "label": {
-            "fill": "#000",
-            "fontSize": 14,
-            "textAnchor": "middle",
-            "textVerticalAnchor": "middle",
-            "pointerEvents": "none"
-          },
-          "body": {
-            "ref": "label",
-            "fill": "#ffd591",
-            "stroke": "#ffa940",
-            "strokeWidth": 2,
-            "rx": 4,
-            "ry": 4,
-            "refWidth": "140%",
-            "refHeight": "140%",
-            "refX": "-20%",
-            "refY": "-20%"
-          }
-        },
-        "position": { "distance": 0.5 }
-      },
-      "zIndex": 0,
-      "value": false,
-      "labels": ["否"],
-      "source": {
-        "cell": "79239010-2291-407d-aeb9-c5386f33bb24",
-        "port": "0cfd6e88-a9e1-458b-8b4a-50d9232012f4"
-      },
-      "target": {
-        "cell": "e3d7094e-42df-4d5d-9a9e-4415abc58fa1",
-        "port": "1fa40d0b-3080-4d31-b5c2-9c32706d4bec"
-      }
-    },
-    {
-      "shape": "BooleanEdge",
-      "attrs": {
-        "line": {
-          "stroke": "#a0a0a0",
-          "strokeWidth": 1,
-          "targetMarker": { "name": "classic", "size": 7 }
-        }
-      },
       "id": "3e260872-e299-4f73-9a36-f6bd9d58b8e6",
       "defaultLabel": {
         "markup": [
@@ -98,6 +48,56 @@
       "target": {
         "cell": "9581ead7-64e4-49a7-bc64-e4c93940ed5e",
         "port": "239ba57d-c7f6-4a03-98e6-4fc2c79d0c60"
+      }
+    },
+    {
+      "shape": "BooleanEdge",
+      "attrs": {
+        "line": {
+          "stroke": "#a0a0a0",
+          "strokeWidth": 1,
+          "targetMarker": { "name": "classic", "size": 7 }
+        }
+      },
+      "id": "5f00ce85-0e47-472b-955d-552395144ab0",
+      "defaultLabel": {
+        "markup": [
+          { "tagName": "rect", "selector": "body" },
+          { "tagName": "text", "selector": "label" }
+        ],
+        "attrs": {
+          "label": {
+            "fill": "#000",
+            "fontSize": 14,
+            "textAnchor": "middle",
+            "textVerticalAnchor": "middle",
+            "pointerEvents": "none"
+          },
+          "body": {
+            "ref": "label",
+            "fill": "#ffd591",
+            "stroke": "#ffa940",
+            "strokeWidth": 2,
+            "rx": 4,
+            "ry": 4,
+            "refWidth": "140%",
+            "refHeight": "140%",
+            "refX": "-20%",
+            "refY": "-20%"
+          }
+        },
+        "position": { "distance": 0.5 }
+      },
+      "zIndex": 0,
+      "value": false,
+      "labels": ["否"],
+      "source": {
+        "cell": "79239010-2291-407d-aeb9-c5386f33bb24",
+        "port": "0cfd6e88-a9e1-458b-8b4a-50d9232012f4"
+      },
+      "target": {
+        "cell": "4d2c786d-159f-4f95-9482-3ab1a66e786e",
+        "port": "c0fb79c4-e597-43dd-964d-d9de82246690"
       }
     },
     {
@@ -296,6 +296,11 @@
       "shape": "ConditionTaskShape",
       "id": "79239010-2291-407d-aeb9-c5386f33bb24",
       "zIndex": 3,
+      "values": {
+        "valueType": "AmountOfConsumption",
+        "compareType": ">",
+        "value": 100
+      },
       "ports": {
         "groups": {
           "Top": {
@@ -371,101 +376,6 @@
             "type": "InAndOut",
             "group": "Left",
             "id": "abc848da-b6d8-4515-ad08-b570108cdd82"
-          }
-        ]
-      },
-      "values": {
-        "valueType": "AmountOfConsumption",
-        "compareType": ">",
-        "value": 100
-      }
-    },
-    {
-      "position": { "x": 610, "y": 296 },
-      "size": { "width": 80, "height": 80 },
-      "attrs": {
-        "text": { "fontSize": 16, "color": "#262626", "text": "结束" },
-        "body": { "strokeWidth": 1, "stroke": "#5F95FF", "fill": "#EFF4FF" },
-        "root": { "magnet": false }
-      },
-      "shape": "EndEventShape",
-      "id": "e3d7094e-42df-4d5d-9a9e-4415abc58fa1",
-      "zIndex": 4,
-      "ports": {
-        "groups": {
-          "Top": {
-            "position": "top",
-            "attrs": {
-              "circle": {
-                "r": 6,
-                "magnet": true,
-                "stroke": "#ffa940",
-                "strokeWidth": 2,
-                "fill": "#fff",
-                "style": { "visibility": "hidden" }
-              }
-            }
-          },
-          "Right": {
-            "position": "right",
-            "attrs": {
-              "circle": {
-                "r": 6,
-                "magnet": true,
-                "stroke": "#ffa940",
-                "strokeWidth": 2,
-                "fill": "#fff",
-                "style": { "visibility": "hidden" }
-              }
-            }
-          },
-          "Bottom": {
-            "position": "bottom",
-            "attrs": {
-              "circle": {
-                "r": 6,
-                "magnet": true,
-                "stroke": "#ffa940",
-                "strokeWidth": 2,
-                "fill": "#fff",
-                "style": { "visibility": "hidden" }
-              }
-            }
-          },
-          "Left": {
-            "position": "left",
-            "attrs": {
-              "circle": {
-                "r": 6,
-                "magnet": true,
-                "stroke": "#ffa940",
-                "strokeWidth": 2,
-                "fill": "#fff",
-                "style": { "visibility": "hidden" }
-              }
-            }
-          }
-        },
-        "items": [
-          {
-            "type": "InAndOut",
-            "group": "Top",
-            "id": "094352bc-2e8d-4356-8cf3-8f5dda08acab"
-          },
-          {
-            "type": "InAndOut",
-            "group": "Right",
-            "id": "c0fb79c4-e597-43dd-964d-d9de82246690"
-          },
-          {
-            "type": "InAndOut",
-            "group": "Bottom",
-            "id": "3c492dbb-3768-4af6-8b01-316a0b5adb4d"
-          },
-          {
-            "type": "InAndOut",
-            "group": "Left",
-            "id": "1fa40d0b-3080-4d31-b5c2-9c32706d4bec"
           }
         ]
       }

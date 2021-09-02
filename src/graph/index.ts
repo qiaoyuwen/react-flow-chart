@@ -1,7 +1,8 @@
 /* eslint-disable no-param-reassign */
+import type { Node } from '@antv/x6';
 import { Addon, Graph, Shape } from '@antv/x6';
 import { BooleanEdge } from './edges/boolean-edge';
-import type { BaseShape } from './shapes/base';
+import { BaseShape } from './shapes/base';
 import { ConditionTaskShape } from './shapes/condition-task';
 import { CouponTaskShape } from './shapes/coupon-task';
 import { EndEventShape } from './shapes/end-event';
@@ -131,10 +132,7 @@ export const createGraph = (container: HTMLElement) => {
     history: true,
   });
 
-  const showOrHidePorts = (
-    ports: NodeListOf<SVGElement>,
-    show: boolean = true,
-  ) => {
+  const showOrHidePorts = (ports: SVGElement[], show: boolean = true) => {
     ports.forEach((el) => {
       el.style.visibility = show ? 'visible' : 'hidden';
     });
@@ -142,13 +140,31 @@ export const createGraph = (container: HTMLElement) => {
 
   // 控制连接桩显示/隐藏
   graph.on('node:mouseenter', ({ node, view }) => {
-    const shape = node as unknown as BaseShape;
+    const shape = node as unknown as Node & BaseShape;
     if (shape.canOutEdge) {
       const canOutEdge = shape.canOutEdge();
       if (canOutEdge) {
-        const portEls = view.container.querySelectorAll(
-          '.x6-port-body',
-        ) as NodeListOf<SVGElement>;
+        const usedPortIds: string[] = [];
+        [
+          ...BaseShape.getUsedInPorts(shape),
+          ...BaseShape.getUsedOutPorts(shape),
+        ].forEach((item) => {
+          if (item.id) {
+            usedPortIds.push(item.id);
+          }
+        });
+
+        const portEls = Array.from(
+          view.container.querySelectorAll(
+            '.x6-port-body',
+          ) as NodeListOf<SVGElement>,
+        ).filter((portEl) => {
+          const id = portEl.getAttribute('port');
+          if (!id) {
+            return false;
+          }
+          return !usedPortIds.includes(id);
+        });
         showOrHidePorts(portEls, true);
       }
     } else {
@@ -157,16 +173,20 @@ export const createGraph = (container: HTMLElement) => {
   });
 
   graph.on('node:mouseleave', ({ view }) => {
-    const portEls = view.container.querySelectorAll(
-      '.x6-port-body',
-    ) as NodeListOf<SVGElement>;
+    const portEls = Array.from(
+      view.container.querySelectorAll(
+        '.x6-port-body',
+      ) as NodeListOf<SVGElement>,
+    );
     showOrHidePorts(portEls, false);
   });
 
   graph.on('node:click', ({ view }) => {
-    const portEls = view.container.querySelectorAll(
-      '.x6-port-body',
-    ) as NodeListOf<SVGElement>;
+    const portEls = Array.from(
+      view.container.querySelectorAll(
+        '.x6-port-body',
+      ) as NodeListOf<SVGElement>,
+    );
     showOrHidePorts(portEls, false);
   });
 

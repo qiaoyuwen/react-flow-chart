@@ -1,4 +1,5 @@
 import type { Edge, Node } from '@antv/x6';
+import { PortManager } from '@antv/x6/lib/model/port';
 
 export abstract class BaseShape {
   abstract canOutEdge?: () => boolean;
@@ -10,10 +11,18 @@ export abstract class BaseShape {
       return [];
     }
     const incomingEdges = graph.getIncomingEdges(node) || [];
-    return incomingEdges.map((edge: Edge) => {
+    const ports: PortManager.PortMetadata[] = [];
+    incomingEdges.forEach((edge: Edge) => {
       const portId = edge.getTargetPortId();
-      return node.getPort(portId!);
+      if (!portId) {
+        return;
+      }
+      const port = node.getPort(portId);
+      if (port) {
+        ports.push(port);
+      }
     });
+    return ports;
   }
 
   static getUsedOutPorts(node: Node) {
@@ -22,9 +31,17 @@ export abstract class BaseShape {
       return [];
     }
     const outgoingEdges = graph.getOutgoingEdges(node) || [];
-    return outgoingEdges.map((edge: Edge) => {
+    const ports: PortManager.PortMetadata[] = [];
+    outgoingEdges.forEach((edge: Edge) => {
       const portId = edge.getSourcePortId();
-      return node.getPort(portId!);
+      if (!portId) {
+        return;
+      }
+      const port = node.getPort(portId);
+      if (port) {
+        ports.push(port);
+      }
     });
+    return ports;
   }
 }

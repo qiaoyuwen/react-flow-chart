@@ -12,7 +12,7 @@ import DefaltJson from './default.json';
 import { useState } from 'react';
 
 export default function IndexPage() {
-  const ref = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLDivElement>(null);
   const siderRef = useRef<HTMLDivElement>(null);
   const graphRef = useRef<Graph>();
   const dndRef = useRef<Addon.Dnd>();
@@ -32,13 +32,13 @@ export default function IndexPage() {
 
   const initGraph = useCallback(() => {
     if (
-      !ref.current ||
+      !canvasRef.current ||
       !siderRef.current ||
       (graphRef.current && dndRef.current && stencilRef.current)
     ) {
       return;
     }
-    graphRef.current = createGraph(ref.current);
+    graphRef.current = createGraph(canvasRef.current);
     graphRef.current.fromJSON(DefaltJson as any);
     graphRef.current.on('node:selected', ({ node }) => {
       setSelectedCell(node);
@@ -72,7 +72,7 @@ export default function IndexPage() {
       </div>
       <div className={styles.content}>
         <div className={styles.sider} ref={siderRef} />
-        <div ref={ref} className={styles.canvas} />
+        <div ref={canvasRef} className={styles.canvas} />
         <ConfigSider cell={selectedCell} />
       </div>
     </div>

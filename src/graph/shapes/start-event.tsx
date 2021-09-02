@@ -58,7 +58,7 @@ export class StartEventShape extends Shape.Circle implements BaseShape {
   }
   canOutEdge() {
     const usedPorts = BaseShape.getUsedOutPorts(this);
-    return usedPorts.length === 0;
+    return usedPorts.length < 4;
   }
 
   canInEdge() {
