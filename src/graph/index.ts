@@ -103,12 +103,29 @@ export const createGraph = (container: HTMLElement) => {
         }
 
         if (targetView) {
-          const node = targetView.cell as BaseShape;
+          const node = targetView.cell as BaseShape & Node;
           if (!node.canInEdge) {
             return false;
           }
           const canInEdge = node.canInEdge();
           if (!canInEdge) {
+            return false;
+          }
+
+          const usedPortIds: string[] = [];
+          [
+            ...BaseShape.getUsedInPorts(node),
+            ...BaseShape.getUsedOutPorts(node),
+          ].forEach((item) => {
+            if (item.id) {
+              usedPortIds.push(item.id);
+            }
+          });
+          const portId = targetMagnet.getAttribute('port');
+          if (!portId) {
+            return false;
+          }
+          if (usedPortIds.includes(portId)) {
             return false;
           }
         }
