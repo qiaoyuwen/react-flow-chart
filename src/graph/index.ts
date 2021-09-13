@@ -6,6 +6,7 @@ import { BaseShape } from './shapes/base';
 import { ConditionTaskShape } from './shapes/condition-task';
 import { CouponTaskShape } from './shapes/coupon-task';
 import { EndEventShape } from './shapes/end-event';
+import { MessageEventShape } from './shapes/message-event';
 import { StartEventShape } from './shapes/start-event';
 
 // 注册节点
@@ -13,6 +14,7 @@ Graph.registerNode(StartEventShape.ShapeKey, StartEventShape);
 Graph.registerNode(EndEventShape.ShapeKey, EndEventShape);
 Graph.registerNode(ConditionTaskShape.ShapeKey, ConditionTaskShape);
 Graph.registerNode(CouponTaskShape.ShapeKey, CouponTaskShape);
+Graph.registerNode(MessageEventShape.ShapeKey, MessageEventShape);
 
 // 注册边
 Graph.registerEdge(BooleanEdge.ShapeKey, BooleanEdge);
@@ -255,7 +257,7 @@ export const createGraph = (container: HTMLElement) => {
   });
 
   // delete
-  graph.bindKey('backspace', () => {
+  graph.bindKey(['backspace', 'del'], () => {
     const cells = graph.getSelectedCells();
     if (cells.length) {
       graph.removeCells(cells);
@@ -287,9 +289,10 @@ export const createStencil = (graph: Graph) => {
 
   stencil.load([
     new StartEventShape(),
+    new EndEventShape(),
+    new MessageEventShape(),
     new ConditionTaskShape(),
     new CouponTaskShape(),
-    new EndEventShape(),
   ]);
 
   return stencil;
