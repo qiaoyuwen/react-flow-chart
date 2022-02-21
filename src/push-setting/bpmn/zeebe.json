@@ -1,0 +1,17 @@
+{
+  "name": "Zeebe",
+  "prefix": "zeebe",
+  "uri": "http://camunda.org/schema/zeebe/1.0",
+  "associations": [],
+  "xml": {
+    "tagAlias": "lowerCase"
+  },
+  "types": [
+    {
+      "name": "TaskDefinition"
+    },
+    {
+      "name": "Subscription"
+    }
+  ]
+}

@@ -1,0 +1,682 @@
+{
+  "cells": [
+    {
+      "shape": "BooleanEdge",
+      "attrs": {
+        "line": {
+          "stroke": "#a0a0a0",
+          "strokeWidth": 1,
+          "targetMarker": { "name": "classic", "size": 7 }
+        }
+      },
+      "id": "rcs6wz75uei",
+      "defaultLabel": {
+        "markup": [
+          { "tagName": "rect", "selector": "body" },
+          { "tagName": "text", "selector": "label" }
+        ],
+        "attrs": {
+          "label": {
+            "fill": "#000",
+            "fontSize": 14,
+            "textAnchor": "middle",
+            "textVerticalAnchor": "middle",
+            "pointerEvents": "none"
+          },
+          "body": {
+            "ref": "label",
+            "fill": "#ffd591",
+            "stroke": "#ffa940",
+            "strokeWidth": 2,
+            "rx": 4,
+            "ry": 4,
+            "refWidth": "140%",
+            "refHeight": "140%",
+            "refX": "-20%",
+            "refY": "-20%"
+          }
+        },
+        "position": { "distance": 0.5 }
+      },
+      "zIndex": 0,
+      "labels": ["是"],
+      "source": {
+        "cell": "2opmi2e474d",
+        "port": "a607dbf3-a518-4f4f-935d-fb1bee62d412"
+      },
+      "target": {
+        "cell": "j5cq4hl2x4q",
+        "port": "17947c00-b6d5-4f78-ad89-0dc5004fc5e7"
+      },
+      "value": true
+    },
+    {
+      "shape": "BooleanEdge",
+      "attrs": {
+        "line": {
+          "stroke": "#a0a0a0",
+          "strokeWidth": 1,
+          "targetMarker": { "name": "classic", "size": 7 }
+        }
+      },
+      "id": "4b8br79ad3w",
+      "defaultLabel": {
+        "markup": [
+          { "tagName": "rect", "selector": "body" },
+          { "tagName": "text", "selector": "label" }
+        ],
+        "attrs": {
+          "label": {
+            "fill": "#000",
+            "fontSize": 14,
+            "textAnchor": "middle",
+            "textVerticalAnchor": "middle",
+            "pointerEvents": "none"
+          },
+          "body": {
+            "ref": "label",
+            "fill": "#ffd591",
+            "stroke": "#ffa940",
+            "strokeWidth": 2,
+            "rx": 4,
+            "ry": 4,
+            "refWidth": "140%",
+            "refHeight": "140%",
+            "refX": "-20%",
+            "refY": "-20%"
+          }
+        },
+        "position": { "distance": 0.5 }
+      },
+      "zIndex": 0,
+      "value": false,
+      "labels": ["否"],
+      "source": {
+        "cell": "2opmi2e474d",
+        "port": "04cc10cd-c8ab-48df-aa17-12a525ada9b6"
+      },
+      "target": {
+        "cell": "uu8nisup9oq",
+        "port": "138ca054-0797-419c-a082-34e7c4b2d141"
+      }
+    },
+    {
+      "position": { "x": 270, "y": 30 },
+      "size": { "width": 80, "height": 80 },
+      "attrs": {
+        "text": { "fontSize": 16, "color": "#262626", "text": "开始" },
+        "body": { "strokeWidth": 1, "stroke": "#5F95FF", "fill": "#EFF4FF" },
+        "root": { "magnet": false }
+      },
+      "shape": "StartEventShape",
+      "id": "1l168n3le31",
+      "ports": {
+        "groups": {
+          "Top": {
+            "position": "top",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          },
+          "Right": {
+            "position": "right",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          },
+          "Bottom": {
+            "position": "bottom",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          },
+          "Left": {
+            "position": "left",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          }
+        },
+        "items": [
+          {
+            "type": "InAndOut",
+            "group": "Top",
+            "id": "ff2d12b3-614c-4810-a44d-93b2a6e8d7d9"
+          },
+          {
+            "type": "InAndOut",
+            "group": "Right",
+            "id": "f9649857-fe85-4265-980b-60be50a0cd52"
+          },
+          {
+            "type": "InAndOut",
+            "group": "Bottom",
+            "id": "d62e77f0-1a1c-4648-814f-4c8c50e1804e"
+          },
+          {
+            "type": "InAndOut",
+            "group": "Left",
+            "id": "86f98a89-c53c-4f84-b05d-f4b8b1b22c5f"
+          }
+        ]
+      },
+      "zIndex": 1
+    },
+    {
+      "position": { "x": 270, "y": 172 },
+      "size": { "width": 80, "height": 80 },
+      "attrs": {
+        "text": { "fontSize": 16, "color": "#262626", "text": "触发器" },
+        "body": { "strokeWidth": 1, "stroke": "#5F95FF", "fill": "#EFF4FF" },
+        "root": { "magnet": false }
+      },
+      "shape": "MessageEventShape",
+      "id": "yx5y6a2ep8c",
+      "ports": {
+        "groups": {
+          "Top": {
+            "position": "top",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          },
+          "Right": {
+            "position": "right",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          },
+          "Bottom": {
+            "position": "bottom",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          },
+          "Left": {
+            "position": "left",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          }
+        },
+        "items": [
+          {
+            "type": "InAndOut",
+            "group": "Top",
+            "id": "dfc73b1e-5438-4e72-87c8-c256dda8b6a7"
+          },
+          {
+            "type": "InAndOut",
+            "group": "Right",
+            "id": "9abe4774-d4a9-46d2-a83d-46848d01f202"
+          },
+          {
+            "type": "InAndOut",
+            "group": "Bottom",
+            "id": "e19f3419-2052-4daf-b1f7-a3ea0ce95059"
+          },
+          {
+            "type": "InAndOut",
+            "group": "Left",
+            "id": "252bffc1-43dc-4cc2-b30e-f89b443cd451"
+          }
+        ]
+      },
+      "zIndex": 2,
+      "values": {
+        "component": {
+          "id": "885845996989317120",
+          "application": "scbd-dispatch",
+          "module": "订单",
+          "name": "消费金额",
+          "description": "用户在商圈内实际支付的金额判断",
+          "methodName": "checkOrderPaymentAmount",
+          "className": "com.bytesee.scbd.dispatch.application.service.impl.condition.OrderConditionServiceImpl",
+          "value": "condition:order:amount",
+          "parameters": null,
+          "nodeType": "condition",
+          "nodeStatus": 1,
+          "version": "1.0.0"
+        }
+      }
+    },
+    {
+      "position": { "x": 260, "y": 305 },
+      "size": { "width": 100, "height": 100 },
+      "attrs": {
+        "text": { "fontSize": 16, "color": "#262626", "text": "判断框" },
+        "root": { "magnet": false },
+        "body": {
+          "refPoints": "0,10 10,0 20,10 10,20",
+          "strokeWidth": 1,
+          "stroke": "#5F95FF",
+          "fill": "#EFF4FF"
+        }
+      },
+      "shape": "ConditionTaskShape",
+      "id": "2opmi2e474d",
+      "ports": {
+        "groups": {
+          "Top": {
+            "position": "top",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          },
+          "Right": {
+            "position": "right",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          },
+          "Bottom": {
+            "position": "bottom",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          },
+          "Left": {
+            "position": "left",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          }
+        },
+        "items": [
+          {
+            "type": "InAndOut",
+            "group": "Top",
+            "id": "583c5abc-1b5f-4013-ab8e-38a33e1c69ca"
+          },
+          {
+            "type": "InAndOut",
+            "group": "Right",
+            "id": "04cc10cd-c8ab-48df-aa17-12a525ada9b6"
+          },
+          {
+            "type": "InAndOut",
+            "group": "Bottom",
+            "id": "a607dbf3-a518-4f4f-935d-fb1bee62d412"
+          },
+          {
+            "type": "InAndOut",
+            "group": "Left",
+            "id": "2e6fd4c5-b207-44f9-a11b-d5470ff362e7"
+          }
+        ]
+      },
+      "zIndex": 3,
+      "values": { "value": 159, "compareType": ">" }
+    },
+    {
+      "position": { "x": 250, "y": 511 },
+      "size": { "width": 120, "height": 80 },
+      "attrs": {
+        "text": { "fontSize": 16, "color": "#262626", "text": "任务框" },
+        "body": {
+          "strokeWidth": 1,
+          "stroke": "#5F95FF",
+          "fill": "#EFF4FF",
+          "rx": 5,
+          "ry": 5
+        },
+        "root": { "magnet": false }
+      },
+      "shape": "CouponTaskShape",
+      "id": "j5cq4hl2x4q",
+      "ports": {
+        "groups": {
+          "Top": {
+            "position": "top",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          },
+          "Right": {
+            "position": "right",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          },
+          "Bottom": {
+            "position": "bottom",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          },
+          "Left": {
+            "position": "left",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          }
+        },
+        "items": [
+          {
+            "type": "InAndOut",
+            "group": "Top",
+            "id": "17947c00-b6d5-4f78-ad89-0dc5004fc5e7"
+          },
+          {
+            "type": "InAndOut",
+            "group": "Right",
+            "id": "0082d504-221c-4ed7-888c-a5e6d85f33c2"
+          },
+          {
+            "type": "InAndOut",
+            "group": "Bottom",
+            "id": "8993c0d5-8689-4c33-8f54-b1beff43a62b"
+          },
+          {
+            "type": "InAndOut",
+            "group": "Left",
+            "id": "3c949836-9cd5-4cbe-8b8a-2bb625af51c2"
+          }
+        ]
+      },
+      "zIndex": 4,
+      "values": {
+        "component": {
+          "id": "885845996964151296",
+          "application": "scbd-dispatch",
+          "module": "优惠券",
+          "name": "发放优惠券",
+          "description": "发放优惠券给用户",
+          "methodName": "sendCoupon",
+          "className": "com.bytesee.scbd.dispatch.application.service.impl.action.CouponActionServiceImpl",
+          "value": "action:coupon:save",
+          "parameters": null,
+          "nodeType": "action",
+          "nodeStatus": 1,
+          "version": "1.0.0"
+        },
+        "coupon": {
+          "id": "1435436804058927106",
+          "activityName": "代金券1",
+          "activityStartDate": "2021-09-30 00:00:00",
+          "activityEndDate": "2021-10-01 23:59:59",
+          "sharable": 1,
+          "state": 0,
+          "couponAmount": 5,
+          "meetPrice": 10,
+          "couponType": 3,
+          "applicableRange": 0,
+          "faceAmountText": "满10元减5元",
+          "rating": 0,
+          "userLimits": 0,
+          "usersMaxMum": null,
+          "validDateType": 1,
+          "startDays": null,
+          "validityPeriod": null,
+          "couponStartDate": null,
+          "couponEndDate": null,
+          "couponScope": null
+        },
+        "userLimits": 1,
+        "collectionMode": "singleton"
+      }
+    },
+    {
+      "position": { "x": 270, "y": 689 },
+      "size": { "width": 80, "height": 80 },
+      "attrs": {
+        "text": { "fontSize": 16, "color": "#262626", "text": "结束" },
+        "body": { "strokeWidth": 1, "stroke": "#5F95FF", "fill": "#EFF4FF" },
+        "root": { "magnet": false }
+      },
+      "shape": "EndEventShape",
+      "id": "uu8nisup9oq",
+      "ports": {
+        "groups": {
+          "Top": {
+            "position": "top",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          },
+          "Right": {
+            "position": "right",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          },
+          "Bottom": {
+            "position": "bottom",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          },
+          "Left": {
+            "position": "left",
+            "attrs": {
+              "circle": {
+                "r": 6,
+                "magnet": true,
+                "stroke": "#ffa940",
+                "strokeWidth": 2,
+                "fill": "#fff",
+                "style": { "visibility": "hidden" }
+              }
+            }
+          }
+        },
+        "items": [
+          {
+            "type": "InAndOut",
+            "group": "Top",
+            "id": "f0049844-c6ea-4a63-a49e-5321bd81c161"
+          },
+          {
+            "type": "InAndOut",
+            "group": "Right",
+            "id": "138ca054-0797-419c-a082-34e7c4b2d141"
+          },
+          {
+            "type": "InAndOut",
+            "group": "Bottom",
+            "id": "0173e898-2ab3-4ce0-bf8e-f15969729c6a"
+          },
+          {
+            "type": "InAndOut",
+            "group": "Left",
+            "id": "25b551e2-a92e-4f49-8370-970805388bc0"
+          }
+        ]
+      },
+      "zIndex": 5
+    },
+    {
+      "shape": "edge",
+      "attrs": {
+        "line": {
+          "stroke": "#a0a0a0",
+          "strokeWidth": 1,
+          "targetMarker": { "name": "classic", "size": 7 }
+        }
+      },
+      "id": "s4iih4ozm61",
+      "source": {
+        "cell": "1l168n3le31",
+        "port": "d62e77f0-1a1c-4648-814f-4c8c50e1804e"
+      },
+      "target": {
+        "cell": "yx5y6a2ep8c",
+        "port": "dfc73b1e-5438-4e72-87c8-c256dda8b6a7"
+      },
+      "zIndex": 6
+    },
+    {
+      "shape": "edge",
+      "attrs": {
+        "line": {
+          "stroke": "#a0a0a0",
+          "strokeWidth": 1,
+          "targetMarker": { "name": "classic", "size": 7 }
+        }
+      },
+      "id": "ft755w7l18p",
+      "source": {
+        "cell": "yx5y6a2ep8c",
+        "port": "e19f3419-2052-4daf-b1f7-a3ea0ce95059"
+      },
+      "target": {
+        "cell": "2opmi2e474d",
+        "port": "583c5abc-1b5f-4013-ab8e-38a33e1c69ca"
+      },
+      "zIndex": 7
+    },
+    {
+      "shape": "edge",
+      "attrs": {
+        "line": {
+          "stroke": "#a0a0a0",
+          "strokeWidth": 1,
+          "targetMarker": { "name": "classic", "size": 7 }
+        }
+      },
+      "id": "fjnefm3fmco",
+      "source": {
+        "cell": "j5cq4hl2x4q",
+        "port": "8993c0d5-8689-4c33-8f54-b1beff43a62b"
+      },
+      "target": {
+        "cell": "uu8nisup9oq",
+        "port": "f0049844-c6ea-4a63-a49e-5321bd81c161"
+      },
+      "zIndex": 8
+    }
+  ]
+}
